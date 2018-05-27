@@ -1,35 +1,72 @@
+trouwens, links in sublime openen = ctrl + alt + enter
 RASPBERRY PI 1 MODEL B
+verbeteringen
 
-- raspberry prepareren
-- schakelaar vor golfspel
+- tepellampjes kopen 9v!
+- uitknop?
+- bouwen op breadboard
+- scherm aansluiten
+- testen
+
+
+- golfspel bedenken
+	aan uit schakelaar
+	circuit sluiter door balletje
+	weerstand?
+	licht?
+
+evt code aanpassen om het kreunen telkens intenser te laten worden (teller / if counter == 3....)
+// wat met verschillende bestanden? kunnen die load/play - aparte functies of bestandnaam als var in de functie?
+
+#set up a counter
+touch = 0
+
+ if GPIO.input(7) == 1:
+        #turn on LED and increment counter      
+        GPIO.output(18,True)
+        touch = touch + 1
+        #play appropriate mp3
+        if touch < = 1:
+        	play(filename1)
+        elif 1 < touch <= 5:
+        	play(filename2)
+        elif touch > 5:
+        	play(filename3)
+        time.sleep(0.3)  #anders registreert hij veel te veel touches 
+
+
+
+
+
 
 ONDERDELEN
 https://www.hobbyelectronica.nl
-
-
 
 WIRE GAME
 https://www.raspberrypi.org/magpi/wire-loop-python-game/
 GPIO: sudo idle in terminal & dan script laden
 (https://www.youtube.com/watch?v=41IO4Qe5Jzw | info over GPIO)
-pull down resistor 10K en current limiting resistor 1K (meer info hierover: https://youtu.be/NAl-ULEattw?t=4m14s)
-
-
-http://www.explainingcomputers.com/pi_gpio_inputs_video.html --> reed counter is interessant want bevat switch én startknop
-
+pull down resistor 10K (om float state te vermijden ) en current limiting resistor (om ontploffing rpi te vermijden als je pin per ongeluk in ipv uit zet of omgekeerd?) 1K (meer info hierover: https://youtu.be/NAl-ULEattw?t=4m14s)
 
 
 RELAY
 
 https://shweta612.wordpress.com/2016/01/13/using-raspberry-pi-and-windows-10-iot-core-to-remotely-control-an-electric-device/
-
 https://www.youtube.com/watch?v=ZszlVVY1LXo
 
 
 MP3
+load uit loop gehaald; vermijdt dit vertraging?
 https://learn.adafruit.com/playing-sounds-and-using-buttons-with-raspberry-pi/overview
 https://www.theverge.com/2018/3/14/17120764/raspberry-pi-button-sound-guide-how-to-diy
+
+http://static1.grsites.com/archive/sounds/people/people032.mp3 // heavy breathing
+http://static1.grsites.com/archive/sounds/people/people028.mp3 // moaning
 
 RUN AT STARTUP
 http://www.stuffaboutcode.com/2012/06/raspberry-pi-run-program-at-start-up.html
 https://www.raspberrypi.org/forums/viewtopic.php?t=7192	
+
+ON OFF SWITCH?
+http://blog.ricardoarturocabral.com/2013/01/auto-reboot-hung-raspberry-pi-using-on.html
+https://howchoo.com/g/mwnlytk3zmm/how-to-add-a-power-button-to-your-raspberry-pi
