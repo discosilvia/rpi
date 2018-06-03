@@ -40,18 +40,19 @@ try:
                 while GPIO.input(16)==0:
                         pass #Pass is a null operation
 
-                print ("live")
-                #flicker to start      
-                GPIO.output(22,False) #relay is on when low
-                time.sleep(0.2)
-                GPIO.output(22,True) #relay is on when low
-                time.sleep(0.2)
-                GPIO.output(22,False) #relay is on when low
-                time.sleep(0.2)
-                GPIO.output(22,True) #relay is on when low
+                
 
                 #while loop until button pressed
                 while GPIO.input(16) == 0:
+                        print ("live")
+                        #flicker to start      
+                        GPIO.output(22,False) #relay is on when low
+                        time.sleep(0.2)
+                        GPIO.output(22,True) #relay is on when low
+                        time.sleep(0.2)
+                        GPIO.output(22,False) #relay is on when low
+                        time.sleep(0.2)
+                        GPIO.output(22,True) #relay is on when low
                         if GPIO.input(7) == 1:
                                 # turn on sound
                                 play()
