@@ -3,10 +3,9 @@ RASPBERRY PI 1 MODEL B
 verbeteringen
 
 - optimize workflow (program)
-    start button is not really influencing program
-- sounds
+    gpio pin cleanup is dodgy
+    when ssh-ing script is running two times?
 - finalize assembly
-- tepellampjes kopen 9v!
 
 
 - golfspel bedenken     
