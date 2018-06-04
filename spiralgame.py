@@ -36,11 +36,17 @@ try:
 
         run = 0
         while True :
-                #empty while loop that exits when button pressed
-                #while GPIO.input(16) == 0:
-                #       pass #Pass is a null operation
                 if GPIO.input(16) == 0 and run == 0:
-                        print ("live")                              
+                        print ("live") 
+                        GPIO.output(22,False)
+                        time.sleep(0.2)
+                        GPIO.output(22,True)
+                        time.sleep(0.2)
+                        GPIO.output(22,False)
+                        time.sleep(0.2)
+                        GPIO.output(22,True)
+                        time.sleep(0.2)
+                        GPIO.output(22,False)                             
                         while GPIO.input(16) == 0:
                                 if GPIO.input(7) == 1:
                                         # turn on sound
@@ -60,17 +66,7 @@ try:
                         run = 1
                 
                 if GPIO.input(16) == 0 and run == 1:
-                        print ("off")
-                        GPIO.output(22,False)
-                        time.sleep(0.2)
-                        GPIO.output(22,True)
-                        time.sleep(0.2)
-                        GPIO.output(22,False)
-                        time.sleep(0.2)
-                        GPIO.output(22,True)
-                        time.sleep(0.2)
-                        GPIO.output(22,False)
-                                                                        
+                        print ("off")                                                                                             
                         run = 0
                         while GPIO.input(16) == 0:
                                 time.sleep(0.1)
