@@ -17,7 +17,7 @@ GPIO.setup(16,GPIO.IN) # button
 
 try:
         #Specify MP3
-        pygame.mixer.music.load("/home/pi/rpi/moan.mp3")
+        pygame.mixer.music.load("/home/pi/rpi/sound.mp3")
         #print("loaded mp3")
         #print ("tap start to begin!")
                        
@@ -75,7 +75,7 @@ try:
 #cleanup the GPIO pins before ending
 except KeyboardInterrupt:
         #print ("ctrl c")
-        GPIO.cleanup()
+        #GPIO.cleanup()
 #except:
         #print ("other error")
 #        GPIO.cleanup()
