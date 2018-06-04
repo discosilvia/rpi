@@ -38,6 +38,7 @@ try:
         while True :
                 if GPIO.input(16) == 0 and run == 0:
                         #print ("live") 
+                        run = 1
                         GPIO.output(22,False)
                         time.sleep(0.2)
                         GPIO.output(22,True)
@@ -62,8 +63,7 @@ try:
                                         GPIO.output(22,False)
                         
                         
-                                time.sleep(0.1)
-                        run = 1
+                        #        time.sleep(0.1)
                 
                 if GPIO.input(16) == 0 and run == 1:
                         #print ("off")                                                                                             
