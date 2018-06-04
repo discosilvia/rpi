@@ -17,9 +17,9 @@ GPIO.setup(16,GPIO.IN) # button
 
 try:
         #Specify MP3
-        pygame.mixer.music.load("/home/pi/Desktop/example.mp3")
-        print("loaded mp3")
-        print ("tap start to begin!")
+        pygame.mixer.music.load("/home/pi/rpi/Womans Orgasm Sound Scream Sound.mp3")
+        #print("loaded mp3")
+        #print ("tap start to begin!")
                        
         #play function
         def play():
@@ -37,7 +37,7 @@ try:
         run = 0
         while True :
                 if GPIO.input(16) == 0 and run == 0:
-                        print ("live") 
+                        #print ("live") 
                         GPIO.output(22,False)
                         time.sleep(0.2)
                         GPIO.output(22,True)
@@ -51,13 +51,13 @@ try:
                                 if GPIO.input(7) == 1:
                                         # turn on sound
                                         play()
-                                        print ("play")
+                                        #print ("play")
                                         #turn on relay      
                                         GPIO.output(22,True)                         
                                 elif GPIO.input(7) == 0:
                                         # turn off sound
                                         pause()
-                                        print ("pause")
+                                        #print ("pause")
                                         # turn off relay
                                         GPIO.output(22,False)
                         
@@ -66,17 +66,17 @@ try:
                         run = 1
                 
                 if GPIO.input(16) == 0 and run == 1:
-                        print ("off")                                                                                             
+                        #print ("off")                                                                                             
                         run = 0
                         while GPIO.input(16) == 0:
                                 time.sleep(0.1)
 
 #cleanup the GPIO pins before ending
 except KeyboardInterrupt:
-        print ("ctrl c")
+        #print ("ctrl c")
         GPIO.cleanup()
 except:
-        print ("other error")
+        #print ("other error")
         GPIO.cleanup()
 finally:
         GPIO.cleanup()
