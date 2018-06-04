@@ -17,7 +17,7 @@ GPIO.setup(16,GPIO.IN) # button
 
 try:
         #Specify MP3
-        pygame.mixer.music.load("/home/pi/rpi/Womans Orgasm Sound Scream Sound.mp3")
+        pygame.mixer.music.load("/home/pi/rpi/moan.mp3")
         #print("loaded mp3")
         #print ("tap start to begin!")
                        
@@ -68,15 +68,16 @@ try:
                 if GPIO.input(16) == 0 and run == 1:
                         #print ("off")                                                                                             
                         run = 0
+                        GPIO.output(22,False)
                         while GPIO.input(16) == 0:
                                 time.sleep(0.1)
 
 #cleanup the GPIO pins before ending
 except KeyboardInterrupt:
         #print ("ctrl c")
-        GPIO.cleanup()
+#        GPIO.cleanup()
 except:
         #print ("other error")
-        GPIO.cleanup()
+#        GPIO.cleanup()
 finally:
         GPIO.cleanup()
