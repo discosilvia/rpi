@@ -73,10 +73,10 @@ try:
                                 time.sleep(0.1)
 
 #cleanup the GPIO pins before ending
-except KeyboardInterrupt:
+#except KeyboardInterrupt:
         #print ("ctrl c")
 #        GPIO.cleanup()
-except:
+#except:
         #print ("other error")
 #        GPIO.cleanup()
 finally:
