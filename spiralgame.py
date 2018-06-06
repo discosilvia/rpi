@@ -6,7 +6,7 @@ import time
 import pygame.mixer
 
 #Fire up the sound mixer
-pygame.mixer.init(22100, -16, 2, 512)
+pygame.mixer.init(44100,-16,2,1024)
 #gets rid of delay
 
 #set GPIO numbering mode and define input and output pins
@@ -75,9 +75,9 @@ try:
 #cleanup the GPIO pins before ending
 except KeyboardInterrupt:
         #print ("ctrl c")
-        #GPIO.cleanup()
+        GPIO.cleanup()
 #except:
         #print ("other error")
 #        GPIO.cleanup()
 finally:
-        GPIO.cleanup()
+	GPIO.cleanup()
